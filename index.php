@@ -1,32 +1,3 @@
-<?php
-if (isset($_POST['submit'])) {
-    include 'conn.php';
-
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-
-    $query = mysqli_query($conn, "SELECT * FROM tb_admin WHERE username = '" . $username . "' AND password = '" . $password . "' ");
-
-    $data = mysqli_fetch_array($query);
-    $user_login = $data['username'];
-    $user_role = $data['user_role'];
-
-
-    if (mysqli_num_rows($query) > 0) {
-        session_start();
-        $_SESSION['username'] = $username;
-        $_SESSION['user_role'] = $user_role;
-
-        echo "berhasil login";
-        if ($user_role == 'admin') {
-            header('location:data_barang.php');
-        }
-    } else {
-        $error = true;
-    }
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,9 +22,6 @@ if (isset($_POST['submit'])) {
                     <form name="login-form" method="POST" class="well well-lg">
                         <h4>Login Sistem Rekapitulasi Barang</h4>
                         <br>
-                        <?php if (isset($error)) { ?>
-                            <p style="font-style: italic; color: red;">Username / Password anda salah</p>
-                        <?php } ?>
                         <tr>
                             <td><label for="Username">Username: </label></td>
                             <td><input type="text" id="username" name="username"></td>

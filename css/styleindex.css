@@ -1,3 +1,17 @@
+p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 250px, 250px;
+    text-align: center;
+}
+
+.header-reg {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: x-large;
+    text-align: center;
+    margin-top: 50px;
+
+}
+
 .main-form {
     margin-top: 250px auto;
     margin-bottom: 250px auto;
