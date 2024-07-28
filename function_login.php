@@ -8,7 +8,7 @@ if (isset($_POST['submit'])) {
     $query = mysqli_query($conn, "SELECT * FROM tb_admin WHERE username = '" . $username . "' AND password = '" . $password . "' ");
 
     $data = mysqli_fetch_array($query);
-    $user_login = $data['username'];
+    $username = $data['username'];
     $user_role = $data['user_role'];
 
 
@@ -17,14 +17,15 @@ if (isset($_POST['submit'])) {
         $_SESSION['username'] = $username;
         $_SESSION['user_role'] = $user_role;
 
-        echo "berhasil login";
+       // echo "berhasil login";
         if ($user_role == 'admin') {
             header('location:data_barang.php');
         }
-        exit;
+        exit();
     } else {
-        echo "<script>alert('Username atau password salah. Silahkan coba lagi atau registrasi.');</script>";
-        header('Location: registrasi.php');
+        echo "<script>alert('Username atau password salah. Silahkan coba lagi atau hubungi tim personalia.'); window.location.href='index.php';</script>";
+       // header('Location: index.php');
     }
-}
+    exit();
+} 
 ?>
