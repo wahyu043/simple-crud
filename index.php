@@ -19,7 +19,7 @@
         <div class="row  main-form" align="center">
             <div class="col-md-12" align="center">
                 <table>
-                    <form name="login-form" method="POST" class="well well-lg">
+                    <form action="function_login.php" name="login-form" method="POST" class="well well-lg">
                         <h4>Login Sistem Rekapitulasi Barang</h4>
                         <br>
                         <tr>
