@@ -1,8 +1,3 @@
-<?php
-include 'conn.php';
-include 'admin.php';
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,6 +16,10 @@ include 'admin.php';
 </head>
 
 <body>
+    <?php
+        include ("conn.php");
+        include ("admin.php");
+    ?>
     <!-- Nav Bar -->
     <div class="container-fluid">
         <div class="row">
@@ -41,10 +40,10 @@ include 'admin.php';
             <div class="col-sm-12">
                 <div class="box box-primary">
                     <div class="box-header with-border">
-                        <h3 class="box-tittle">List Data Barang</h3>
+                        <h3 class="box-tittle">Registrasi Barang Masuk</h3>
                         <div class="box-tools pull-left"></div>
                         <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#tambahbarang"> Tambahkan Barang </a>
-                        <a href="#" class="btn btn-success" data-toggle="modal" data-target="#simpanbarang"> Simpan </a>
+                        <a href="#" class="btn btn-success" data-toggle="modal" data-target="#updatebarang"> Simpan </a>
                     </div>
                     <div class="container-fluid">
                         <div class="row">
@@ -66,13 +65,14 @@ include 'admin.php';
                                     </thead>
                                     <tbody>
                                         <?php
+                                        include ("conn.php");
                                         $no = 1;
                                         $queryview = mysqli_query($conn, "SELECT * FROM barang_masuk");
                                         while ($row = mysqli_fetch_assoc($queryview)) {
                                         ?>
                                             <tr>
                                                 <td><?php echo $no++; ?></td>
-                                                <td><?php echo $row['kode_masuk']; ?></td>
+                                                <td><?php echo $row['kode_barang']; ?></td>
                                                 <td><?php echo $row['nama_barang']; ?></td>
                                                 <td><?php echo $row['satuan']; ?></td>
                                                 <td><?php echo $row['hbeli']; ?></td>
@@ -115,15 +115,15 @@ include 'admin.php';
                                                                     <div class="modal-body">
                                                                         <form action="function_masuk.php?act=updatebarang" method="post" role="form">
                                                                             <?php
-                                                                            $kode_masuk = $row['kode_masuk'];
-                                                                            $query = "SELECT * FROM barang_masuk WHERE kode_masuk='$kode_masuk'";
+                                                                            $kode_barang = $row['kode_barang'];
+                                                                            $query = "SELECT * FROM barang_masuk WHERE kode_barang='$kode_barang'";
                                                                             $result = mysqli_query($conn, $query);
                                                                             while ($row = mysqli_fetch_assoc($result)) {
                                                                             ?>
                                                                                 <div class="form-group">
                                                                                     <div class="row">
                                                                                         <label class="col-sm-3 control-label text-right">Kode Barang <span class="text-red">*</span></label>
-                                                                                        <div class="col-sm-8"><input type="text" class="form-control" name="kode_masuk" placeholder="Kode Masuk" value="<?php echo $row['kode_masuk']; ?>" readonly></div>
+                                                                                        <div class="col-sm-8"><input type="text" class="form-control" name="kode_barang" placeholder="Kode Barang" value="<?php echo $row['kode_barang']; ?>" readonly></div>
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="form-group">

@@ -1,0 +1,96 @@
+                                                <td>
+                                                    <a href="#" class="btn btn-primary btn-flat btn-xs" data-toggle="modal" data-target="#updatebarang<?php echo $no; ?>"> <i class="fas fa-edit"></i></i> Edit </a>
+                                                    <a href="#" class="btn btn-danger btn-flat btn-xs" data-toggle="modal" data-target="#deletebarang<?php echo $no; ?>"> <i class="fa fa-trash"></i> Hapus </a>
+                                                    <!-- modal delete item -->
+                                                    < <div class="example-modal">
+                                                        <div id="deletebarang<?php echo $no; ?>" class="modal fade" role="dialog" style="display:none;">
+                                                            <div class="modal-dialog">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                                        <h3 class="modal-title">Konfirmasi Delete Data Barang</h3>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        <h4 align="center">Apakah anda yakin ingin menghapus <?php echo $row['nama_barang']; ?><strong><span class="grt"></span></strong> ?</h4>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button id="nodelete" type="button" class="btn btn-danger pull-left" data-dismiss="modal">Cancel</button>
+                                                                        <a href="function_barang.php?act=deletebarang&kode_barang=<?php echo $row['kode_barang']; ?>" class="btn btn-primary">Delete</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- end modal delete -->
+                                                    <!-- modal edit item -->
+                                                    <div class="example-modal">
+                                                        <div id="updatebarang<?php echo $no; ?>" class="modal fade" role="dialog" style="display:none;">
+                                                            <div class="modal-dialog">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h3 class="modal-title">Edit Data Barang</h3>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        <form action="function_barang.php?act=updatebarang" method="post" role="form">
+                                                                            <?php
+                                                                            $kode_barang = $row['kode_barang'];
+                                                                            $query = "SELECT * FROM data_barang WHERE kode_barang='$kode_barang'";
+                                                                            $result = mysqli_query($conn, $query);
+                                                                            while ($row = mysqli_fetch_assoc($result)) {
+                                                                            ?>
+                                                                                <div class="form-group">
+                                                                                    <div class="row">
+                                                                                        <label class="col-sm-3 control-label text-right">Kode Barang <span class="text-red">*</span></label>
+                                                                                        <div class="col-sm-8"><input type="text" class="form-control" name="kode_barang" placeholder="Kode Barang" value="<?php echo $row['kode_barang']; ?>" readonly></div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <div class="row">
+                                                                                        <label class="col-sm-3 control-label text-right">Nama barang <span class="text-red">*</span></label>
+                                                                                        <div class="col-sm-8"><input type="text" class="form-control" name="nama_barang" placeholder="Nama Barang" value="<?php echo $row['nama_barang']; ?>"></div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <div class="row">
+                                                                                        <label class="col-sm-3 control-label text-right">Satuan <span class="text-red">*</span></label>
+                                                                                        <div class="col-sm-8"><input type="text" class="form-control" name="satuan" placeholder="Satuan" value="<?php echo $row['satuan']; ?>"></div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <div class="row">
+                                                                                        <label class="col-sm-3 control-label text-right">Harga beli <span class="text-red">*</span></label>
+                                                                                        <div class="col-sm-8"><input type="number" class="form-control" name="hbeli" placeholder="0" value="<?php echo $row['hbeli']; ?>"></div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <div class="row">
+                                                                                        <label class="col-sm-3 control-label text-right">Harga Jual <span class="text-red">*</span></label>
+                                                                                        <div class="col-sm-8"><input type="number" class="form-control" name="hjual" placeholder="0" value="<?php echo $row['hjual']; ?>"></div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <div class="row">
+                                                                                        <label class="col-sm-3 control-label text-right">Pemasok <span class="text-red">*</span></label>
+                                                                                        <div class="col-sm-8"><input type="text" class="form-control" name="pemasok" placeholder="Pemasok" value="<?php echo $row['pemasok']; ?>"></div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <div class="row">
+                                                                                        <label class="col-sm-3 control-label text-right">Stok <span class="text-red">*</span></label>
+                                                                                        <div class="col-sm-8"><input type="number" class="form-control" name="stok" placeholder="Stok barang" value="<?php echo $row['stok']; ?>"></div>
+                                                                                    </div>
+                                                                                    <div class="modal-footer">
+                                                                                        <button id="noedit" type="button" class="btn btn-danger pull-left" data-dismiss="modal">Batal</button>
+                                                                                        <input type="submit" name="submit" class="btn btn-primary" value="Update">
+                                                                                    </div>
+                                                                                <?php
+                                                                            }
+                                                                                ?>
+                                                                        </form>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- end modal edit item -->
+                                                </td>
