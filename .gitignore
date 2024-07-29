@@ -1,0 +1,5 @@
+# Abaikan semua file yang diawali dengan titik
+.*
+*.txt
+# Kecuali .gitignore itu sendiri
+!.gitignore
