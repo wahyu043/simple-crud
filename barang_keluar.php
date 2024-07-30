@@ -19,7 +19,7 @@ include 'admin.php';
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <title>Rekapitulasi Data Barang Masuk</title>
+    <title>Rekapitulasi Data Barang Keluar</title>
 </head>
 
 <body>
@@ -29,8 +29,11 @@ include 'admin.php';
             <div class="col-md-12">
                 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
                     <ul class="navbar-nav">
-                        <li class="nav-item"><a class="nav-link" href="data_barang.php"> Home </a></li>
+                    <li class="nav-item"><a class="nav-link" href="data_barang.php">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="barang_masuk.php"> Barang Masuk </a></li>
+                        <li class="nav-item"><a class="nav-link" href="barang_keluar.php"> Barang Keluar </a></li>
+                        <li class="nav-item"><a class="nav-link" href="transaksi.php"> Laporan Transaksi </a></li>
+                        <li class="nav-item"><a class="nav-link" href="logout.php"> Logout </a></li>
                     </ul>
                 </nav>
             </div>
@@ -43,10 +46,10 @@ include 'admin.php';
             <div class="col-sm-12">
                 <div class="box box-primary">
                     <div class="box-header with-border">
-                        <h3 class="box-tittle">List Data Barang</h3>
+                        <h3 class="text-center box-tittle">Rekapitulasi Barang Keluar</h3>
                         <div class="box-tools pull-left"></div>
-                        <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#tambahbarang"> Checkout Barang </a>
-                        <a href="#" class="btn btn-success" data-toggle="modal" data-target="#tambah"> Simpan </a>
+                       <!-- <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#"> Checkout Barang </a> 
+                        <a href="#" class="btn btn-success" data-toggle="modal" data-target="#"> Simpan </a> -->
                     </div>
                     <div class="container-fluid">
                         <div class="row">
@@ -69,7 +72,7 @@ include 'admin.php';
                                     <tbody>
                                         <?php
                                         $no = 1;
-                                        $queryview = mysqli_query($conn, "SELECT * FROM barang_masuk");
+                                        $queryview = mysqli_query($conn, "SELECT * FROM barang_keluar");
                                         while ($row = mysqli_fetch_assoc($queryview)) {
                                         ?>
                                             <tr>

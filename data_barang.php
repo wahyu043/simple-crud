@@ -27,6 +27,7 @@ include 'admin.php';
             <div class="col-md-12">
                 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
                     <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="data_barang.php">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="barang_masuk.php"> Barang Masuk </a></li>
                         <li class="nav-item"><a class="nav-link" href="barang_keluar.php"> Barang Keluar </a></li>
                         <li class="nav-item"><a class="nav-link" href="transaksi.php"> Laporan Transaksi </a></li>
@@ -43,7 +44,7 @@ include 'admin.php';
             <div class="col-sm-12">
                 <div class="box box-primary">
                     <div class="box-header with-border">
-                        <h3 class="box-tittle">Stok Opname Barang</h3>
+                        <h3 class= "text-center box-tittle">Stok Opname Barang</h3>
                     </div>
                     <div class="container-fluid">
                         <div class="row">
