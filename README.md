@@ -1,7 +1,29 @@
-Simpel CRUD ini adalah proyek latihan pembuatan halaman transaksi stok opname (keluar-masuknya barang) beserta laporannya. <br>
-Repositori ini merupakan implementasi dari pelatihan yang saya ikuti di lembaga pelatihan. <br>
-Dilengkapi dengan halaman login admin dan registrasi untuk menjadi admin. <br>
-Repositori ini masih jauh dari sempurna dan belum berjalan sebagaimana fungsinya dan masih banyak perbaikan diberbagai tempat. <br>
-Repositori akan selalu diupdate sehingga bisa berjalan sebagaimana mestinya dan harapannya bisa digunakan di real proyek. <br>
-Kelak akan digunakan untuk portofolio saya. <br>
-Saya sangat menerima masukan dalam segi manapun, baik itu perbaikan tampilan fitur bahkan algoritmanya. <br>
+# Simple CRUD - Transaksi Stok Opname
+
+**Simple CRUD** adalah proyek latihan yang berfokus pada pembuatan halaman transaksi **stok opname** (keluar-masuk barang) beserta fitur laporan sederhana.
+
+Repositori ini merupakan hasil implementasi dari pelatihan yang saya ikuti di sebuah lembaga pelatihan.
+
+### Fitur yang Sudah Ada:
+- Halaman login admin
+- Halaman registrasi untuk calon admin
+- Transaksi stok masuk & keluar
+- Tampilan laporan sederhana (masih dalam tahap pengembangan)
+
+---
+
+### Catatan:
+Repositori ini **masih jauh dari sempurna** dan belum berfungsi sepenuhnya sesuai dengan tujuan awal. Masih banyak perbaikan yang perlu dilakukan di berbagai bagian — mulai dari struktur kode, tampilan, hingga logika program.
+
+Proyek ini akan terus di-*update* secara bertahap, dengan harapan dapat berjalan sebagaimana mestinya dan bisa digunakan dalam **real project** di masa depan.
+
+---
+
+### Tujuan:
+Repositori ini akan saya gunakan sebagai bagian dari **portofolio** pribadi.
+
+Saya sangat terbuka terhadap **masukan dan saran**, baik dalam hal tampilan, fitur, maupun algoritma yang digunakan.
+
+---
+
+Terima kasih! 🙏
