@@ -6,7 +6,6 @@ Repositori ini merupakan hasil implementasi dari pelatihan yang saya ikuti di se
 
 ### Fitur yang Sudah Ada:
 - Halaman login admin
-- Halaman registrasi untuk calon admin
 - Transaksi stok masuk & keluar
 - Tampilan laporan sederhana (masih dalam tahap pengembangan)
 
