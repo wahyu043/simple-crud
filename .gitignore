@@ -1,0 +1,6 @@
+# Abaikan semua file yang diawali dengan titik
+.*
+*.txt
+.vscode
+# Kecuali .gitignore itu sendiri
+!.gitignore

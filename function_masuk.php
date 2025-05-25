@@ -2,7 +2,7 @@
     include ("conn.php");
 
 if($_GET['act']== 'tambahbarang'){
-    $kode_masuk = $_POST['kode_masuk'];
+    $kode_barang = $_POST['kode_barang'];
     $nama_barang = $_POST['nama_barang'];
     $satuan=$_POST['satuan'];
     $hbeli=$_POST['hbeli'];
@@ -12,7 +12,7 @@ if($_GET['act']== 'tambahbarang'){
     $tanggal = DATE ( "Y-m-d");
 
     //query tambah//
-    $querytambah =  mysqli_query($conn, "INSERT INTO barang_masuk VALUES('$kode_masuk' ,'$nama_barang','$satuan','$hbeli','$hjual','$pemasok','$jumlah','$tanggal')");
+    $querytambah =  mysqli_query($conn, "INSERT INTO barang_masuk VALUES('$kode_barang' ,'$nama_barang','$satuan','$hbeli','$hjual','$pemasok','$jumlah','$tanggal')");
     if ($querytambah) {
         # code rediret setelah insert ke index
         header("location:barang_masuk.php");
@@ -23,7 +23,7 @@ if($_GET['act']== 'tambahbarang'){
 }
 
 elseif ($_GET['act'] == 'updatebarang') {
-    $kode_masuk = $_POST['kode_masuk'];
+    $kode_barang = $_POST['kode_barang'];
     $nama_barang = $_POST['nama_barang'];
     $satuan = $_POST['satuan'];
     $hbeli = $_POST['hbeli'];
@@ -32,7 +32,7 @@ elseif ($_GET['act'] == 'updatebarang') {
     $jumlah = $_POST['jumlah'];
 
     //query update
-    $queryupdate = mysqli_query($conn, "UPDATE barang_masuk SET nama_barang='$nama_barang', satuan='$satuan', hbeli='$hbeli', hjual='$hjual', pemasok='$pemasok', jumlah='$jumlah' WHERE kode_masuk='$kode_masuk'");
+    $queryupdate = mysqli_query($conn, "UPDATE barang_masuk SET nama_barang='$nama_barang', satuan='$satuan', hbeli='$hbeli', hjual='$hjual', pemasok='$pemasok', jumlah='$jumlah' WHERE kode_barang='$kode_barang'");
 
     if ($queryupdate) {
         # redirect ke page index
@@ -43,10 +43,10 @@ elseif ($_GET['act'] == 'updatebarang') {
 } 
 
 elseif ($_GET['act'] == 'deletebarang') {
-    $kode_masuk = $_GET['kode_masuk'];
+    $kode_barang = $_GET['kode_barang'];
 
     //query hapus
-    $querydelete = mysqli_query($conn, "DELETE FROM barang_masuk WHERE kode_masuk = '$kode_masuk'");
+    $querydelete = mysqli_query($conn, "DELETE FROM barang_masuk WHERE kode_barang = '$kode_barang'");
 
     if ($querydelete) {
         # redirect ke index.php
