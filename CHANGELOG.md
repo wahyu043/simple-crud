@@ -3,6 +3,27 @@
 ## [Unreleased]
 
 ### ✨ Added
+- **Model:** `DataBarang` untuk mengambil data dari tabel `data_barang`.
+- **Controller:** Update `DashboardController` untuk menampilkan **stok terkini** dan username user yang login.
+- **View:** `dashboard/index.php` untuk menampilkan tabel stok barang.
+- **Core:** Autoload `Database.php` ditambahkan di `public/index.php`.
+
+### 🔨 Refactored
+- Menggunakan class `Database` yang sudah ada sebagai koneksi utama (menghilangkan ketergantungan `Model.php`).
+- Menyesuaikan method `model()` agar tidak mengharuskan inheritance dari `Model`.
+
+### 🛠️ Configuration
+- Fix error `Class Model not found` dan `Class Database not found`.
+- Pastikan autoload file core `Database.php` berjalan untuk semua model.
+
+## [v0.2.0] – 2025-07-31
+- Dashboard kini terintegrasi dengan database `stok_opname`.
+- Menampilkan **stok terkini** langsung dari tabel `data_barang` (25 data awal).
+- Proses login dan logout tetap berfungsi dengan proteksi session.
+
+---
+
+### ✨ Added
 
 - Implementasi fitur **Login dan Logout** dengan session management.
 - Proteksi akses **Dashboard** agar hanya user yang sudah login yang bisa mengaksesnya.
