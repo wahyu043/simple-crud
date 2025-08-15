@@ -16,13 +16,32 @@
 
 ---
 
+## [v0.3.1] – 2025-08-15
+
+### ✨ Added
+
+- Menambahkan tombol **Edit** dan **Hapus** pada halaman `Barang Masuk`.
+- Menambahkan method `edit($id)` di `BarangMasukController` untuk:
+  - Menampilkan form dengan data prefilled.
+  - Mengubah jumlah & tanggal masuk (kode_barang readonly).
+- Menambahkan method `update($id)`:
+  - Perubahan jumlah masuk otomatis menyesuaikan stok (`data_barang`).
+- Menambahkan method `delete($id)`:
+  - Hapus transaksi sekaligus rollback stok ke kondisi sebelumnya.
+
+### ✅ CRUD Barang Masuk sekarang lengkap & sinkron dengan stok gudang.
+
+---
+
 ## [v0.3.0] – 2025-07-31
 
 ### ✨ Added
 
 - **Controller:** Menambahkan `BarangMasukController` dengan method:
+
   - `index` → Menampilkan daftar transaksi Barang Masuk.
   - `create` → Form input dengan dropdown daftar barang (`data_barang`).
+
 - **View:**
   - `barang_masuk/index.php` untuk daftar transaksi.
   - `barang_masuk/create.php` untuk form tambah Barang Masuk.

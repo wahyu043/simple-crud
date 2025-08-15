@@ -12,6 +12,7 @@
             <th>Kode Barang</th>
             <th>Jumlah Masuk</th>
             <th>Tanggal Masuk</th>
+            <th>Aksi</th>
         </tr>
     </thead>
     <tbody>
@@ -22,6 +23,10 @@
                     <td><?= htmlspecialchars($row['kode_barang']) ?></td>
                     <td><?= htmlspecialchars($row['jumlah_masuk']) ?></td>
                     <td><?= htmlspecialchars($row['tanggal_masuk']) ?></td>
+                    <td>
+                        <a href="<?= BASE_URL ?>/BarangMasuk/edit/<?= $row['id'] ?>" class="btn btn-sm btn-warning">Edit</a>
+                        <a href="<?= BASE_URL ?>/BarangMasuk/delete/<?= $row['id'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Yakin hapus data ini?')">Hapus</a>
+                    </td>
                 </tr>
             <?php endforeach; ?>
         <?php else: ?>

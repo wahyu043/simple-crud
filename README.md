@@ -8,7 +8,7 @@ Repositori ini merupakan hasil implementasi dari pelatihan yang saya ikuti di se
 
 - Halaman login & logout admin (dengan proteksi akses Dashboard)
 - Struktur proyek menggunakan pola **MVC native PHP**
-- Routing dasar dengan `.htaccess`
+- Routing otomatis dengan controller PHP native
 - Transaksi stok masuk & keluar (belum direfaktor)
 - Tampilan laporan sederhana (masih dalam tahap pengembangan)
 
@@ -20,11 +20,21 @@ Proyek ini sedang dalam proses **refactor besar-besaran**:
 
 - ✅ Struktur MVC native sudah diterapkan
 - ✅ Fitur login, logout, dan proteksi dashboard selesai
-- ⏭️ Berikutnya: refactor fitur barang masuk dan CRUD penuh
+- ✅ Fitur Barang Masuk sudah lengkap (CRUD + sinkron stok)
+- ⏭️ Berikutnya: Barang Keluar, Laporan Transaksi, dan fitur Cetak
+
+---
+
+### Database:
+
+Gunakan database `stok_opname`  
+Tabel minimal: `users`, `data_barang`, `barang_masuk`
 
 ---
 
 ### Catatan:
+
+Repositori ini adalah hasil refactor dari proyek PHP lama berbasis file procedural menjadi pola MVC native modern.
 
 Repositori ini **masih jauh dari sempurna** dan belum berfungsi sepenuhnya sesuai dengan tujuan awal. Masih banyak perbaikan yang perlu dilakukan di berbagai bagian — mulai dari struktur kode, tampilan, hingga logika program.
 
