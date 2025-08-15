@@ -28,7 +28,9 @@ class LoginController extends Controller
 
     public function logout()
     {
+        session_unset();
         session_destroy();
+
         header('Location: ' . BASE_URL . '/login');
         exit;
     }

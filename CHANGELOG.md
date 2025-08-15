@@ -23,7 +23,6 @@
 - **Controller:** Menambahkan `BarangMasukController` dengan method:
   - `index` → Menampilkan daftar transaksi Barang Masuk.
   - `create` → Form input dengan dropdown daftar barang (`data_barang`).
-  - `store` → Menyimpan transaksi dan otomatis menambah stok di `data_barang`.
 - **View:**
   - `barang_masuk/index.php` untuk daftar transaksi.
   - `barang_masuk/create.php` untuk form tambah Barang Masuk.

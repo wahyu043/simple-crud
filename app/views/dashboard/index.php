@@ -19,6 +19,8 @@
 
         <a href="<?= BASE_URL ?>/laporan"
             class="btn btn-primary">🖨 Cetak Laporan</a>
+
+        <a href="<?= BASE_URL ?>/login/logout">Logout</a>
     </div>
 
     <table border="1" cellpadding="8">
@@ -53,7 +55,7 @@
 
     <!-- <p>Ini halaman dashboard setelah login berhasil.</p> -->
 
-    <a href="<?= BASE_URL ?>/login/logout">Logout</a>
+
 </body>
 
 </html>
