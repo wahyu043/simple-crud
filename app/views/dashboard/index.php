@@ -14,8 +14,7 @@
     <div style="margin-top: 20px;">
         <a href="<?= BASE_URL ?>/BarangMasuk" class="btn btn-success">➕ Barang Masuk</a>
 
-        <a href="<?= BASE_URL ?>/barang-keluar"
-            class="btn btn-warning">➖ Barang Keluar</a>
+        <a href="<?= BASE_URL ?>/BarangKeluar" class="btn btn-warning">➖ Barang Keluar</a>
 
         <a href="<?= BASE_URL ?>/laporan"
             class="btn btn-primary">🖨 Cetak Laporan</a>

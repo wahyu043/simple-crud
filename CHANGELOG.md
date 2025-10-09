@@ -16,6 +16,53 @@
 
 ---
 
+## [v0.4.0] – 2025-10-09
+
+### ✨ Added
+
+- **Fitur Barang Keluar (CRUD lengkap)**
+  - `BarangKeluarController` dibuat mengikuti pola `BarangMasukController`.
+  - Menambahkan halaman:
+    - `views/barang_keluar/index.php` → daftar transaksi barang keluar.
+    - `views/barang_keluar/create.php` → form tambah barang keluar.
+    - `views/barang_keluar/edit.php` → form ubah data barang keluar.
+  - Logika stok otomatis:
+    - Saat tambah → stok di `data_barang` **berkurang**.
+    - Saat edit → stok menyesuaikan **selisih jumlah baru–lama**.
+    - Saat hapus → stok dikembalikan (rollback).
+  - Tambahan field baru: `tujuan` pada tabel `barang_keluar`.
+
+### 🛠️ Database
+
+- Menambahkan tabel `barang_keluar` dengan struktur:
+
+  ```sql
+  CREATE TABLE barang_keluar (
+      id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+      kode_barang VARCHAR(50) NOT NULL,
+      jumlah_keluar INT(11) NOT NULL,
+      tanggal_keluar DATE NOT NULL,
+      tujuan VARCHAR(100) NOT NULL,
+      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+  ```
+
+- Menambahkan relasi opsional:
+
+  ALTER TABLE barang_keluar
+  ADD CONSTRAINT fk_barang_keluar_kode
+  FOREIGN KEY (kode_barang) REFERENCES data_barang(kode_barang)
+  ON UPDATE CASCADE
+  ON DELETE RESTRICT;
+
+### ✅ CRUD Barang Keluar berfungsi penuh:
+
+- Tambah data → stok otomatis berkurang.
+- Edit data → stok menyesuaikan perubahan.
+- Hapus data → stok dikembalikan.
+- Semua halaman tampil & berfungsi tanpa error.
+
 ## [v0.3.1] – 2025-08-15
 
 ### ✨ Added
