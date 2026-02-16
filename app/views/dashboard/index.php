@@ -16,6 +16,8 @@
 
         <a href="<?= BASE_URL ?>/BarangKeluar" class="btn btn-warning">➖ Barang Keluar</a>
 
+        <a href="<?= BASE_URL ?>/Transaksi" class="btn btn-secondary">📋 Transaksi</a>
+
         <a href="<?= BASE_URL ?>/laporan"
             class="btn btn-primary">🖨 Cetak Laporan</a>
 
