@@ -30,7 +30,9 @@ class App
     public function parseUrl()
     {
         if (isset($_GET['url'])) {
-            return explode('/', filter_var(rtrim($_GET['url'], '/'), FILTER_SANITIZE_URL));
+            $url = parse_url($_GET['url'], PHP_URL_PATH);
+            $url = ltrim($url, '/');
+            return explode('/', filter_var(rtrim($url, '/'), FILTER_SANITIZE_URL));
         }
         return ['home'];
     }

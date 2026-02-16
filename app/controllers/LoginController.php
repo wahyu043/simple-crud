@@ -9,6 +9,18 @@ class LoginController extends Controller
 
     public function auth()
     {
+        // echo "AUTH TERPANGGIL";
+        // exit;
+
+        // echo "Masuk auth<br>";
+        // die;
+
+        // $user = $userModel->findUser($username, $password);
+
+        // var_dump($user);
+        // die;
+
+
         $username = $_POST['username'];
         $password = $_POST['password'];
 
